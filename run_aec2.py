@@ -47,7 +47,7 @@ def process_file(interpreter_1, interpreter_2, audio_file_name, out_file_name):
 
     # read audio
     audio, fs = sf.read(audio_file_name)
-    lpb, fs_2 = sf.read(audio_file_name.replace("_ech.wav", "_src.wav"))
+    lpb, fs_2 = sf.read(audio_file_name.replace("_src.wav", "_ech.wav"))
     # check fs
     if fs != 16000 or fs_2 != 16000:
         raise ValueError("Sampling rate must be 16kHz.")
@@ -182,7 +182,7 @@ def process_folder(model, folder_name, new_folder_name):
     for root, dirs, files in os.walk(folder_name):
         for file in files:
             # look for .wav files
-            if file.endswith("_ech.wav"):
+            if file.endswith("_src.wav"):
                 # write paths and filenames to lists
                 file_names.append(file)
                 directories.append(root)
