@@ -194,6 +194,7 @@ def process_folder(model, folder_name, new_folder_name):
     # iterate over all .wav files
     for idx in range(len(file_names)):
 
+        print("Processing " + file_names[idx])
         # process each file with the mode
         process_file(
             interpreter_1,
