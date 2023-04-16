@@ -199,7 +199,7 @@ def process_folder(model, folder_name, new_folder_name):
             interpreter_1,
             interpreter_2,
             os.path.join(directories[idx], file_names[idx]),
-            os.path.join(new_directories[idx], file_names[idx].replace("_ech.wav", "_aec.wav"))
+            os.path.join(new_directories[idx], file_names[idx].replace("_src.wav", "_aec.wav"))
         )
         print(file_names[idx] + " processed successfully!")
 
